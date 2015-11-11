@@ -1,9 +1,13 @@
 #include <iostream>
+#include "include/minishell/minishell.h"
 
 using namespace std;
 
 int main() {
-    cout << "Hello World!" << endl;
+    MiniShell *shell = new MiniShell("(#%d, exit code: %d) > ");
+
+    shell->loop();
+
     return 0;
 }
 
