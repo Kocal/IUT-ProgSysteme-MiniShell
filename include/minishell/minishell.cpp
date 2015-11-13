@@ -45,11 +45,11 @@ void MiniShell::loop(void) {
     arguments args;
 
     do {
-        printf(this->ps1.c_str(), lines++, status, this->lastPid);
         do {
+           printf(this->ps1.c_str(), lines++, status, this->lastPid);
            input = this->ask();
            input = Util::trim(input);
-        } while (input.empty() && (cout << "try again: "));
+        } while (input.empty());
 
         args = this->parseInput(input);
         status = this->exec(args, this->lastPid);
